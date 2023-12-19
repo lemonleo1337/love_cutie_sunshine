@@ -167,14 +167,16 @@
                   type="text"
                   placeholder="Lời nhắn của cậu"
                   class="send_input"
+                  id="myTextbox"
                 />
-                <a href="https://www.facebook.com/anhtv2" class="button">Gửi</a>
+                <a class="button" id="lovebutton">Gửi</a>
               </div>
             </form>
             <br />
-            <p class="send_description">
-              Hmmm tính năng gửi tin nhắn này tớ chưa làm xong ._. nên ib nhé hehe :)))
+            <p class="send_description" hidden id="iucaunhe">
+              Tớ bít cậu iu tớ mà!!
             </p>
+        
           </div>
           
 
@@ -203,5 +205,25 @@
 
     <!--========== MAIN JS ==========-->
     <script src="assets/js/main.js"></script>
+    <script>
+      const textbox = document.getElementById("myTextbox");
+
+      let textIndex = 0;
+      let text = "Tớ iu cậu!";
+
+      textbox.addEventListener("keyup", () => {
+        textbox.value = text.slice(0, textIndex); 
+        textIndex++;
+        
+      });
+
+      // If the user clicks in the lovebutton, show iucaunhe
+      document.getElementById("lovebutton").onclick = function () {
+        textbox.value = "Tớ iu cậu!"
+        document.getElementById("iucaunhe").hidden = false;
+      };
+
+
+    </script>
   </body>
 </html>
